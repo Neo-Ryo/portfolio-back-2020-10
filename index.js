@@ -35,10 +35,9 @@ async function main() {
                 console.log(`Server is running on http://localhost:${PORT}`)
         })
     } catch (error) {
-        console.log('Unable to reach DB!')
+        console.log('Unable to reach DB!', error.message)
     }
 }
 
 if (process.env.NODE_ENV !== 'test') main()
 
-module.exports = app
