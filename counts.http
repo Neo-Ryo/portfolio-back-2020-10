@@ -1,0 +1,21 @@
+GET http://localhost:8000/api/counts
+
+###
+
+PUT http://localhost:8000/api/counts/views
+
+###
+
+PUT http://localhost:8000/api/counts/likes
+
+###
+
+POST http://localhost:8000/email
+Content-Type: application/json
+
+{
+    "emailFrom": "ryo_69@hotmail.fr",
+    "emailTo": "marco.sch4064@gmail.com",
+    "subject": "Email from portfolio",
+    "message": " Coucou"
+}

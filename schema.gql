@@ -1,0 +1,25 @@
+type Views {
+    count: Int!
+    }
+type Likes {
+    count: Int!
+    }
+input ViewsInput {
+    count: Int!
+}
+input LikesInput {
+    count: Int!
+}
+type Mutation {
+    mysql_createViews(input: ViewsInput!): Views
+    mysql_createLikes(input: LikesInput!): Likes
+    }
+type Query {
+
+    mysql_getViews(count: Int!): Views
+    mysql_getLikes(count: Int!): Likes
+}
+schema {
+    query: Query
+    mutation: Mutation
+}
