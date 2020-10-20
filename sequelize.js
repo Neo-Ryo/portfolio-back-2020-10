@@ -11,6 +11,12 @@ const {
     DB_HOST,
 } = process.env
 
+if(process.env.DATABASE_URL){
+    module.exports = new Sequelize(process.env.DATABASE_URL, {
+        dialect: "postgres",
+    });
+}
+
 module.exports = new Sequelize({
     host: DB_HOST,
     username: DB_USER,
