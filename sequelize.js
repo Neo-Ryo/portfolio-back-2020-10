@@ -22,6 +22,6 @@ module.exports = new Sequelize({
     username: DB_USER,
     password: DB_PASSWORD,
     database: NODE_ENV !== 'test' ? DB_DATABASE : DB_TEST,
-    dialect: DB_DIALECT,
+    dialect: "mysql",
     logging: false,
 })
