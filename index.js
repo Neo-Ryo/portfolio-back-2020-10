@@ -29,7 +29,7 @@ async function main() {
         await sequelize.authenticate()
         await Counts.findCreateFind({ where: { uuid } })
         console.log(`Database ${process.env.DB_DATABASE} successfully joined`)
-        app.listen(process.env.PORT, (err) => {
+        app.listen(PORT, (err) => {
             if (err) throw new Error(err.message)
             env !== 'production' &&
                 console.log(`Server is running on http://localhost:${PORT}`)
