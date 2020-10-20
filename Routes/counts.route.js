@@ -3,11 +3,11 @@ const counts = express.Router()
 
 const Counts = require('../Models/Counts')
 
-const uuid = process.env.UUID
+const uuid = "ff976a39-4c5b-4016-925a-3d525513a351"
 
 counts.get('/', async (req, res) => {
     try {
-        const count = await Counts.findByPk(uuid)
+        const count = await Counts.findCreateFind({ where : { uuid }})
         res.status(200).json(count)
     } catch (error) {
         res.status(400).json(error)
