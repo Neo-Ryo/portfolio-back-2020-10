@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
     res.send('Welcome on my portfolio API')
 })
 
-const uuid = process.env.UUID
+const uuid = "ff976a39-4c5b-4016-925a-3d525513a351"
 async function main() {
     try {
         await sequelize.sync()
