@@ -1,7 +1,7 @@
 {
     "development": {
       "database": "projectdb",
-      "host": "127.0.0.1",
+      "host": "localhost",
       "dialect": "postgres"
     },
     "test": {
