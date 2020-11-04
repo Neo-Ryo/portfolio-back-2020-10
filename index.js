@@ -12,7 +12,7 @@ const Counts = require('./Models/Counts')
 const sendEmail = require('./Routes/eMailMe')
 
 var corsOptions = {
-    origin: 'https://portfolio-front-2020-10-ft7enocvr.vercel.app/',
+    origin: 'https://portfolio-neko.herokuapp.com/',
     optionsSuccessStatus: 200 
   }
 

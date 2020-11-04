@@ -5,19 +5,31 @@ const { EMAIL, EMAIL_PASS } = process.env
 
 const nodemailer = require('nodemailer')
 
-require('dotenv').config()
-
 const sendMail = express.Router()
+
+// const transport = {
+//     service: 'gmail',   
+//     auth: {
+//         user: EMAIL,
+//         pass: EMAIL_PASS,
+//     },
+// }
+
+const transport = {
+   port: 465,
+   host: 'smtp.gmail.com',
+   secure: true,
+   auth: {
+       user: EMAIL,
+       pass: EMAIL_PASS
+   }
+}
+
+let transporter = nodemailer.createTransport(transport)
 
 sendMail.post('/', async (req, res) => {
     const { message, emailFrom, subject } = req.body
-    const transport = {
-        service: 'gmail',   
-        auth: {
-            user: EMAIL,
-            pass: EMAIL_PASS,
-        },
-    }
+    
 
     const emailOption = {
         from: emailFrom,
@@ -27,15 +39,14 @@ sendMail.post('/', async (req, res) => {
     }
 
     try {
-        const smtpTransport = nodemailer.createTransport(transport)
-        await smtpTransport.verify((error, success) => {
+        transporter.verify((error, success) => {
             if (success) {
                 console.log('Server is ready to take our messages')
             } else {
                 console.log(error)
             }
         })
-        await smtpTransport.sendMail(emailOption, (err, data) => {
+        transporter.sendMail(emailOption, (err, data) => {
             if (data) {
                 res.status(201).send('email Send')
             } else {
