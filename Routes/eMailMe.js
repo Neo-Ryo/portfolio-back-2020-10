@@ -12,7 +12,7 @@ const sendMail = express.Router()
 sendMail.post('/', async (req, res) => {
     const { message, emailFrom, subject } = req.body
     const transport = {
-        service: 'gmail',
+        service: 'gmail',   
         auth: {
             user: EMAIL,
             pass: EMAIL_PASS,
