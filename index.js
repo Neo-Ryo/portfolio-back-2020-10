@@ -11,7 +11,12 @@ const counts = require('./Routes/counts.route')
 const Counts = require('./Models/Counts')
 const sendEmail = require('./Routes/eMailMe')
 
-app.use(cors())
+var corsOptions = {
+    origin: 'https://portfolio-front-2020-10-ft7enocvr.vercel.app/',
+    optionsSuccessStatus: 200 
+  }
+
+app.use(cors(corsOptions))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static('public'))
