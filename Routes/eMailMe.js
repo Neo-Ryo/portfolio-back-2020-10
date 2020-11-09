@@ -1,4 +1,5 @@
 const express = require('express')
+const xoauth2 = require('xoauth2')
 require('dotenv').config()
 
 const { EMAIL, EMAIL_PASS, CLIENT_ID, CLIENT_SECRET } = process.env
@@ -8,6 +9,10 @@ const nodemailer = require('nodemailer')
 const sendMail = express.Router()
 
 const transport = {
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    ssl: true,
     service: 'gmail',
     auth: {
         user: EMAIL,

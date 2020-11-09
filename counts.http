@@ -15,7 +15,16 @@ Content-Type: application/json
 
 {
     "emailFrom": "ryo_69@hotmail.fr",
-    "emailTo": "marco.sch4064@gmail.com",
     "subject": "Email from portfolio",
     "message": " Coucou"
+}
+
+###
+
+POST https://oauth2.googleapis.com/token
+Content-Type: application/json
+
+{
+    "client_id": "977267206924-5lh3f9pp0uqjdpj2jcljontttamb9muo.apps.googleusercontent.com",
+    "client_secret": "YmctmghYeDbkbir9V-CVo5fC"
 }
