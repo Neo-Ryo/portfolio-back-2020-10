@@ -11,11 +11,6 @@ const counts = require('./Routes/counts.route')
 const Counts = require('./Models/Counts')
 const sendEmail = require('./Routes/eMailMe')
 
-var corsOptions = {
-    origin: 'https://portfolio-neko.herokuapp.com/',
-    optionsSuccessStatus: 200 
-  }
-
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
